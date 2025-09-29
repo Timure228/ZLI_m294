@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers = new Array();
+        function new_game() {
+            sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+            let zahl = Math.floor(Math.random() * 100)
+            let rat = Number(prompt("Guess:"))
+            while (rat != zahl) {
+                alert("Falsch")
+                rat = prompt()
+            }
+            numbers.push(zahl)
+            alert("RICHTIG!!!!!")
+            new_sum = sum + zahl
+            alert("Damn, du hast schon " + new_sum + " geratet!")
+        } 
+        function get_sum() {
+            document.write(numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0))
+            console.log(numbers)
+        }
+    </script>
+    <button onclick="new_game()">New Game</button>
+    <button onclick="get_sum()">Sum</button>
+    </body>
+</html>
