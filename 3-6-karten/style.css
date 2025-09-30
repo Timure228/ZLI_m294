@@ -1,0 +1,22 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 11px;
+    margin: 30px;
+}
+
+img {
+    filter: brightness(0%);
+}
+
+img:hover {
+    border: 2px solid green;
+}
+
+.turned {
+    filter: brightness(100%);
+}
+
+.removed {
+    opacity: 0;
+}

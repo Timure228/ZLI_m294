@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Option 3 (best)
+        document.addEventListener("DOMContentLoaded", () => {
+            // Aufgabe 1
+            document.body.style = "background-color: yellow"})
+    </script>
+    <!--
+        Option 2
+        <script src="./script.js" defer></script>
+    -->
+</head>
+<body id="mybody">
+    <h1>Platzhalter</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium vero ipsum sit quo, 
+        ratione reprehenderit tempore fugit temporibus itaque iusto neque nulla est omnis tenetur
+         id error voluptates explicabo ut.</p>
+    <ul>
+        <li>ich</li>
+        <li>du</li>
+    </ul>
+    <button onclick="opana()">Opana</button>
+</body>
+<style>
+    .large {
+        font-size: 2em;
+    }
+</style>
+<script>
+    async function opana() {
+        // Hintergrund Farbe ändern
+        // document.body.style.backgroundColor = "yellow"
+        // sehe andere Options in <head>
+        // Text von h1 ändern
+        document.getElementsByTagName("h1")[0].innerText = "Tymur" 
+        // oder mit .textContent (eher Inhalt nicht für Benutzer)
+        // Add class for CSS
+        document.getElementsByTagName("p")[0].classList.add("large")
+        // Dem UL ein LI mit Text geben
+        // document.querySelector("ul").innerHTML += "<li>er/sie/es</li>"
+        const ulEl = document.querySelector("ul")
+        const liEl = document.createElement("li")
+        liEl.innerText = "er/sie/es"
+        ulEl.append(liEl)
+        // 2. LI löschen
+        document.querySelector("ul li:nth-of-type(2)").remove()
+        // Add <img> after <h1>
+        let image = document.createElement("img")
+        image.src = "https://images-na.ssl-images-amazon.com/images/I/61sYLkH6HbL._AC_UL600_SR600,600_.jpg"
+        image.width = 130
+        document.querySelector("h1").append(image)
+        // 10 neue Elemente für LI
+        let elemente = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        elemente.forEach((value) => document.querySelector("ul").innerHTML += "<li>" + value + "</li>")
+        // Farbe zufällig
+        let random_R = Math.floor(Math.random() * 255)
+        let random_G = Math.floor(Math.random() * 255)
+        let random_B = Math.floor(Math.random() * 255)
+        await setTimeout(() => document.body.style.backgroundColor = "rgb(" + random_R + "," + random_G + "," + random_B + ")", 1000)
+    }
+        
+</script>
+</html>
