@@ -1,0 +1,38 @@
+.accordion {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 5px;
+    padding: 5px;
+
+    width: 750px;
+    height: 35px;
+    
+    opacity: 80%;
+    background-color: #6f6f6f;
+    border-radius: 0px 10px 10px; 
+}
+
+
+.accordion:hover {
+    border: 1.5px solid black;
+}
+
+.clicked {
+    width: 1000px;
+}
+
+span {
+    display: block;
+    background-color: rgb(203, 203, 203);
+    opacity: 80%;
+    padding: 20px;
+    border-radius: 10px;    
+   
+    width: auto;
+}
+
+.add_container {
+    position: fixed;
+    bottom: 0;
+}

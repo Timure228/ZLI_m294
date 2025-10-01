@@ -1,0 +1,1 @@
+alert(document.querySelectorAll("ul li")[0].innerHTML)

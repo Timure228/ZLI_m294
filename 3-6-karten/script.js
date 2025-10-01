@@ -11,6 +11,7 @@ for (let i = kantone.length - 1; 0 < i; i--) {
       [kantone[i], kantone[j]] = [kantone[j], kantone[i]];
    }
 
+document.querySelector("#loser").textContent ="Gescheitert:"
 
 function choose(e) {
     if (e.target.classList.contains("turned")) {
@@ -31,6 +32,8 @@ function checkCards() {
         selected[1].removeEventListener("click", choose)
         selected = []
     } else {
+        lose_count++
+        document.querySelector("#loser").textContent = "Gescheitert: " + lose_count
         selected[0].classList.remove("turned")
         selected[1].classList.remove("turned")
 
@@ -45,3 +48,6 @@ kantone.forEach((kanton) => {
     img.addEventListener("click", choose)
     document.querySelector(".container").appendChild(img)
     })
+
+alert(document.querySelector(".container + img"))
+for (let g in arr) {}
