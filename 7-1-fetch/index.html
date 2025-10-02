@@ -6,14 +6,34 @@
     <title>Document</title>
     <script>
         const API = "https://api.restful-api.dev/objects"
-        
-        fetch(API)
-            .then((response) => response.json())
-            .then((data) => console.log(data))
 
+        function add_data(data_point) {
+            li = document.createElement("li")
+            li.innerHTML = data_point.name
+            if (data_point.data != null && data_point.data.price) {
+                li.innerHTML += " " + data_point.data.price + "$"
+            } if (data_point.data != null && data_point.data["capacity GB"]) {
+                li.innerHTML += " | Storage: " + data_point.data["capacity GB"] + "GB"
+            } if (data_point.data != null && data_point.data["Price"]) {
+                li.innerHTML += " " + data_point.data["Price"] + "$"
+            }
+            document.querySelector("ul").append(li)
+            console.log("done")
+        }
+
+        data = fetch(API)
+            .then((response) => response.json())
+            .then((data) => {
+            console.log(Array.from(data))
+            Array.from(data).forEach((data_point) => {
+                add_data(data_point)
+            })})
+        
     </script>
 </head>
 <body>
-    
+    <ul>
+
+    </ul>
 </body>
 </html>
