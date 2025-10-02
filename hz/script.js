@@ -1,1 +1,5 @@
-alert(document.querySelectorAll("ul li")[0].innerHTML)
+function hi() {
+    alert("dh")
+}
+
+alert(document.querySelectorAll("ul.menu2 li")[1].innerHTML)

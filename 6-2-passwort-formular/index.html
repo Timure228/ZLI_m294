@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registry</title>
+    <script src="./script.js" defer></script>
+    <style>
+        input, layer {
+            display: block;
+        }
+        input:user-valid {
+            border: 2px solid green;
+        }
+        input:user-invalid {
+            border: 2px solid red;
+        }
+        ul {
+            list-style: none;
+            display: grid;
+            padding: 0;
+            margin: 0;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        li {
+            background-color: blue;
+        }
+        li:nth-child(3) {
+            background-color: coral;
+            /* display: none; -> platz wird freigegeben */
+            /* visibility: hidden; -> Versteckt aber Platz reserviert */
+            /*opacity: 0; */
+        }
+
+        @keyframes appear {
+            from {opacity: 0; bottom: 0px;}
+            to {opacity: 1; bottom: 30px;}
+        }
+
+        @keyframes disappear {
+            from {opacity: 1; left: 40%;}
+            to {opacity: 0; left: 100%;}
+        }
+
+        .toast {
+            position: absolute;
+            align-items: center;
+            left: 40%;
+
+            background-color: antiquewhite;
+            width: 240px;
+            height: 50px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+            border-left: 8px solid green;
+            
+            display: flex;
+            justify-content: center;
+
+            animation: appear 0.5s forwards, disappear 0.4s 2s forwards;
+        }
+
+    </style>
+</head>
+<body>
+    <form>
+        <label for="#email">E-Mail-Adresse</label>
+        <input id="email" type="email" required>
+        <label for="#password">Passwort</label>
+        <input id="password" type="password" required>
+        <label for="#prove">Passwortbestätigung</label>
+        <input id="prove" type="password" required>
+        <label for="#licence">Licence</label>
+        <input id="licence" type="checkbox">
+        <!-- <input id="register" type="submit" value="registrieren"> -->
+         <button type="submit" id="register">registrieren   </button>
+    </form>
+    <ul>
+        <li>Ein</li>
+        <li>Zwei</li>
+        <li>Drei</li>
+        <li>Vier</li>
+        <li>Fünf</li>
+        <li>Sechs</li>
+        <li>Sieben</li>
+        <li>Acht</li>
+    </ul>
+</body>
+</html>
