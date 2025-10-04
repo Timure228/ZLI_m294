@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks Manager</title>
+    <script src="./script.js" defer></script>
+    <style>
+        #list-all {
+            background-color: green;
+        }
+        #login input {
+            display: block;
+            gap: 10px;
+        }
+        input:user-invalid {
+            border: 2.5px solid red;
+        }
+        input:user-valid {
+            border: 2.5px solid green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tasks Manager</h1>
+    <button id="list-all">List all tasks</button>
+    <ul id="tasks"></ul>
+    <form class="add-task-form">
+        <button type="submit" id="add-task">Add new task</button>
+        <label for="task-title">Task Title:</label>
+        <input id="task-title" type="text">
+    </form>
+    <form id="login">
+        <label for="login-username">Enter Username:</label>
+        <input id="login-username" type="text" required>
+        <label for="login-password">Enter Password:</label>
+        <input id="login-password" type="password" required>
+        <button id="login-button" type="submit">Login</button>
+    </form>
+    <button id="guest-button">Enter as Guest</button>
+</body>
+</html>

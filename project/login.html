@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="./login.js" defer></script>
+    <script src="./script.js" defer></script>
+    <style>
+        input {
+            display: block;
+        }
+        input:user-invalid {
+            border: 2.5px solid red;
+        }
+        input:user-valid {
+            border: 2.5px solid green;
+        }
+    </style>
+</head>
+<body>
+    <form id="login">
+        <label for="login-username">Enter Username:</label>
+        <input id="login-username" type="text" required>
+        <label for="login-password">Enter Password:</label>
+        <input id="login-password" type="password" required>
+        <button id="login-button" type="submit">Login</button>
+    </form>
+    <button id="guest-button">Enter as Guest</button>
+</body>
+</html>
